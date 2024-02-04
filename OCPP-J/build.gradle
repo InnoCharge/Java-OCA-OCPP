@@ -18,3 +18,6 @@ task javadocJar(type: Jar) {
 
 description = 'Java-OCA-OCPP OCPP-J'
 publishing.publications.maven.artifact(javadocJar)
+
+// Lower-case artifactId required for publishing to GitHub Packages
+publishing.publications.maven.artifactId = 'ocpp-j'
