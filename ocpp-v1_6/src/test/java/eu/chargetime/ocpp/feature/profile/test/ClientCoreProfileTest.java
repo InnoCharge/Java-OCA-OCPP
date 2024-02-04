@@ -323,7 +323,7 @@ public class ClientCoreProfileTest extends ProfileTest {
   public void
       handleRequest_aRemoteStopTransactionRequest_callsHandleRemoteStopTransactionRequest() {
     // Given
-    RemoteStopTransactionRequest request = new RemoteStopTransactionRequest(0);
+    RemoteStopTransactionRequest request = new RemoteStopTransactionRequest(0l);
 
     // When
     core.handleRequest(SESSION_NULL, request);

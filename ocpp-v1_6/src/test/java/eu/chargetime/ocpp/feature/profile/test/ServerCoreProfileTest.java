@@ -308,7 +308,7 @@ public class ServerCoreProfileTest extends ProfileTest {
   public void
       createRemoteStopTransactionRequest_withTransactionId_returnsValidRemoteStopTransactionRequest() {
     // Given
-    Integer transactionId = 42;
+    Long transactionId = 42l;
 
     // When
     RemoteStopTransactionRequest result = core.createRemoteStopTransactionRequest(transactionId);
@@ -401,7 +401,7 @@ public class ServerCoreProfileTest extends ProfileTest {
   @Test
   public void handleRequest_aStopTransactionRequest_callsHandleStopTransactionRequest() {
     // Given
-    StopTransactionRequest request = new StopTransactionRequest(0, ZonedDateTime.now(), 0);
+    StopTransactionRequest request = new StopTransactionRequest(0, ZonedDateTime.now(), 0l);
     UUID sessionId = UUID.randomUUID();
 
     // When

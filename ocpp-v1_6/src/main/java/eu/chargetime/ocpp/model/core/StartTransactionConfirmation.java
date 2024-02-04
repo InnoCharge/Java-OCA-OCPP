@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 public class StartTransactionConfirmation implements Confirmation {
 
   private IdTagInfo idTagInfo;
-  private Integer transactionId;
+  private Long transactionId;
 
   /**
    * @deprecated use {@link #StartTransactionConfirmation(IdTagInfo, Integer)} to be sure to set
@@ -57,7 +57,7 @@ public class StartTransactionConfirmation implements Confirmation {
    * @param idTagInfo the {@link IdTagInfo}, see {@link #setIdTagInfo(IdTagInfo)}
    * @param transactionId integer, transaction, see {@link #setTransactionId(Integer)}
    */
-  public StartTransactionConfirmation(IdTagInfo idTagInfo, Integer transactionId) {
+  public StartTransactionConfirmation(IdTagInfo idTagInfo, Long transactionId) {
     setIdTagInfo(idTagInfo);
     setTransactionId(transactionId);
   }
@@ -94,7 +94,7 @@ public class StartTransactionConfirmation implements Confirmation {
    *
    * @return transaction id.
    */
-  public Integer getTransactionId() {
+  public Long getTransactionId() {
     return transactionId;
   }
 
@@ -104,7 +104,7 @@ public class StartTransactionConfirmation implements Confirmation {
    * @param transactionId integer, transaction.
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(Long transactionId) {
     this.transactionId = transactionId;
   }
 

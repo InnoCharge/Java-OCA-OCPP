@@ -82,7 +82,7 @@ public class MeterValuesRequestTest {
   @Test
   public void setTransactionId_transactionIdIsSet() {
     // Given
-    int anyValue = 42;
+    long anyValue = 42;
 
     // When
     request.setTransactionId(anyValue);

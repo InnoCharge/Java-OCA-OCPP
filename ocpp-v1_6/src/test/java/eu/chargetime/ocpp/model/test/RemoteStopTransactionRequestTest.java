@@ -44,7 +44,7 @@ public class RemoteStopTransactionRequestTest {
   @Test
   public void setTransactionId_anInteger_transactionIdIsSet() {
     // Given
-    Integer anInteger = 42;
+    Long anInteger = 42l;
 
     // When
     request.setTransactionId(anInteger);
@@ -65,7 +65,7 @@ public class RemoteStopTransactionRequestTest {
   @Test
   public void validate_transactionIdIsSet_returnTrue() {
     // Given
-    request.setTransactionId(42);
+    request.setTransactionId(42l);
 
     // When
     boolean isValid = request.validate();

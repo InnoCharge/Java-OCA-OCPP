@@ -175,7 +175,7 @@ public class ServerCoreProfile implements Profile {
    * @see RemoteStopTransactionRequest
    * @see RemoteStartTransactionFeature
    */
-  public RemoteStopTransactionRequest createRemoteStopTransactionRequest(Integer transactionId) {
+  public RemoteStopTransactionRequest createRemoteStopTransactionRequest(Long transactionId) {
     return new RemoteStopTransactionRequest(transactionId);
   }
 

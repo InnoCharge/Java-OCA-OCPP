@@ -46,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 public class MeterValuesRequest implements Request {
 
   private Integer connectorId;
-  private Integer transactionId;
+  private Long transactionId;
   private MeterValue[] meterValue;
 
   /** @deprecated use {@link #MeterValuesRequest(Integer)} to be sure to set required fields */
@@ -105,7 +105,7 @@ public class MeterValuesRequest implements Request {
    *
    * @return transaction id.
    */
-  public Integer getTransactionId() {
+  public Long getTransactionId() {
     return transactionId;
   }
 
@@ -115,7 +115,7 @@ public class MeterValuesRequest implements Request {
    * @param transactionId integer, transaction id.
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(Long transactionId) {
     this.transactionId = transactionId;
   }
 

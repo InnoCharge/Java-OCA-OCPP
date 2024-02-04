@@ -50,7 +50,7 @@ import javax.xml.bind.annotation.XmlType;
     })
 public class ChargingProfile implements Validatable {
   private Integer chargingProfileId;
-  private Integer transactionId;
+  private Long transactionId;
   private Integer stackLevel;
   private ChargingProfilePurposeType chargingProfilePurpose;
   private ChargingProfileKindType chargingProfileKind;
@@ -156,7 +156,7 @@ public class ChargingProfile implements Validatable {
    *
    * @return the transactionId
    */
-  public Integer getTransactionId() {
+  public Long getTransactionId() {
     return transactionId;
   }
 
@@ -167,7 +167,7 @@ public class ChargingProfile implements Validatable {
    * @param transactionId Integer
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(Long transactionId) {
     this.transactionId = transactionId;
   }
 

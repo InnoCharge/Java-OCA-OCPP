@@ -213,7 +213,7 @@ public class ClientCoreProfile implements Profile {
    * @return an instance of {@link StopTransactionRequest}.
    */
   public StopTransactionRequest createStopTransactionRequest(
-      int meterStop, ZonedDateTime timestamp, int transactionId) {
+      int meterStop, ZonedDateTime timestamp, long transactionId) {
     StopTransactionRequest request =
         new StopTransactionRequest(meterStop, timestamp, transactionId);
     return request;

@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class RemoteStopTransactionRequest implements Request {
 
-  private Integer transactionId;
+  private Long transactionId;
 
   /**
    * @deprecated use {@link #RemoteStopTransactionRequest(Integer)} to be sure to set required
@@ -51,7 +51,7 @@ public class RemoteStopTransactionRequest implements Request {
    *
    * @param transactionId integer, transaction id, see {@link #setTransactionId(Integer)}
    */
-  public RemoteStopTransactionRequest(Integer transactionId) {
+  public RemoteStopTransactionRequest(Long transactionId) {
     setTransactionId(transactionId);
   }
 
@@ -65,7 +65,7 @@ public class RemoteStopTransactionRequest implements Request {
    *
    * @return transaction id.
    */
-  public Integer getTransactionId() {
+  public Long getTransactionId() {
     return transactionId;
   }
 
@@ -75,7 +75,7 @@ public class RemoteStopTransactionRequest implements Request {
    * @param transactionId integer, transaction id.
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(Long transactionId) {
     this.transactionId = transactionId;
   }
 

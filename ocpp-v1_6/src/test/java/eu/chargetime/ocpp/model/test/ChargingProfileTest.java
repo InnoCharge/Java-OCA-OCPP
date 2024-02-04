@@ -78,7 +78,7 @@ public class ChargingProfileTest {
   @Test
   public void setTransactionId_someInteger_transactionIdIsSet() {
     // Given
-    Integer someInteger = 42;
+    Long someInteger = 42l;
 
     // When
     chargingProfile.setTransactionId(someInteger);
@@ -217,7 +217,7 @@ public class ChargingProfileTest {
     when(chargingSchedule.validate()).thenReturn(true);
     chargingProfile.setChargingSchedule(chargingSchedule);
 
-    chargingProfile.setTransactionId(42);
+    chargingProfile.setTransactionId(42l);
     chargingProfile.setChargingProfilePurpose(ChargingProfilePurposeType.TxDefaultProfile);
 
     // When

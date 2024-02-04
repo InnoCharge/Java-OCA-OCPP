@@ -102,7 +102,7 @@ public class StopTransactionRequestTest {
   @Test
   public void setTransactionId_anInteger_transactionIdIsSet() {
     // Given
-    Integer anInteger = 42;
+    Long anInteger = 42l;
 
     // When
     request.setTransactionId(anInteger);
@@ -149,7 +149,7 @@ public class StopTransactionRequestTest {
     // Given
     request.setMeterStop(42);
     request.setTimestamp(ZonedDateTime.now());
-    request.setTransactionId(42);
+    request.setTransactionId(42l);
 
     // When
     boolean isValid = request.validate();
@@ -176,7 +176,7 @@ public class StopTransactionRequestTest {
     // Given
     request.setMeterStop(42);
     request.setTimestamp(ZonedDateTime.now());
-    request.setTransactionId(42);
+    request.setTransactionId(42l);
 
     MeterValue meterValue = mock(MeterValue.class);
     request.setTransactionData(aList(meterValue));

@@ -293,7 +293,7 @@ public class FakeCentralSystem {
     return result;
   }
 
-  public void sendRemoteStopTransactionRequest(int transactionId) throws Exception {
+  public void sendRemoteStopTransactionRequest(long transactionId) throws Exception {
     RemoteStopTransactionRequest request = new RemoteStopTransactionRequest();
     request.setTransactionId(transactionId);
     send(request);

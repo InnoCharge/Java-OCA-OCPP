@@ -47,7 +47,7 @@ public class StopTransactionRequest implements Request {
   private String idTag;
   private Integer meterStop;
   private ZonedDateTime timestamp;
-  private Integer transactionId;
+  private Long transactionId;
   private Reason reason;
   private MeterValue[] transactionData;
 
@@ -65,7 +65,7 @@ public class StopTransactionRequest implements Request {
    * @param timestamp ZonedDateTime, stop time, see {@link #setTimestamp(ZonedDateTime)}
    * @param transactionId integer, transaction id, see {@link #setTransactionId(Integer)}
    */
-  public StopTransactionRequest(Integer meterStop, ZonedDateTime timestamp, Integer transactionId) {
+  public StopTransactionRequest(Integer meterStop, ZonedDateTime timestamp, Long transactionId) {
     setMeterStop(meterStop);
     setTimestamp(timestamp);
     setTransactionId(transactionId);
@@ -163,7 +163,7 @@ public class StopTransactionRequest implements Request {
    *
    * @return transaction id.
    */
-  public Integer getTransactionId() {
+  public Long getTransactionId() {
     return transactionId;
   }
 
@@ -174,7 +174,7 @@ public class StopTransactionRequest implements Request {
    * @param transactionId integer, transaction id.
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(Long transactionId) {
     this.transactionId = transactionId;
   }
 

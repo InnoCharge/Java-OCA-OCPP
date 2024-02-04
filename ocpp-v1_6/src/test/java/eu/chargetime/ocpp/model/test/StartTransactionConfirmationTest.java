@@ -58,7 +58,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void setTransactionId_anInteger_transactionIdIsSet() {
     // Given
-    Integer anInteger = 42;
+    Long anInteger = 42l;
 
     // When
     confirmation.setTransactionId(anInteger);
@@ -79,7 +79,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void validate_idTagInfoIsNotSetAndTransactionIdIsSet_returnFalse() {
     // Given
-    confirmation.setTransactionId(42);
+    confirmation.setTransactionId(42l);
 
     // When
     boolean isValid = confirmation.validate();
@@ -105,7 +105,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void validate_idTagInfoAndTransactionIdIsSet_idTagInfoIsValidated() {
     // Given
-    confirmation.setTransactionId(42);
+    confirmation.setTransactionId(42l);
     IdTagInfo idTagInfo = mock(IdTagInfo.class);
     confirmation.setIdTagInfo(idTagInfo);
 
@@ -119,7 +119,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void validate_idTagInfoAndTransactionIdIsSet_returnTrue() {
     // Given
-    confirmation.setTransactionId(42);
+    confirmation.setTransactionId(42l);
     IdTagInfo idTagInfo = mock(IdTagInfo.class);
     when(idTagInfo.validate()).thenReturn(true);
     confirmation.setIdTagInfo(idTagInfo);
