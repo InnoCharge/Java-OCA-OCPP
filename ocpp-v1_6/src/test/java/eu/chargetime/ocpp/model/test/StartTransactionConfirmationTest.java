@@ -5,6 +5,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
+import java.math.BigInteger;
+
 import eu.chargetime.ocpp.model.core.IdTagInfo;
 import eu.chargetime.ocpp.model.core.StartTransactionConfirmation;
 import org.junit.Before;
@@ -58,7 +60,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void setTransactionId_anInteger_transactionIdIsSet() {
     // Given
-    Long anInteger = 42l;
+    BigInteger anInteger = BigInteger.valueOf(42);
 
     // When
     confirmation.setTransactionId(anInteger);
@@ -79,7 +81,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void validate_idTagInfoIsNotSetAndTransactionIdIsSet_returnFalse() {
     // Given
-    confirmation.setTransactionId(42l);
+    confirmation.setTransactionId(BigInteger.valueOf(42));
 
     // When
     boolean isValid = confirmation.validate();
@@ -105,7 +107,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void validate_idTagInfoAndTransactionIdIsSet_idTagInfoIsValidated() {
     // Given
-    confirmation.setTransactionId(42l);
+    confirmation.setTransactionId(BigInteger.valueOf(42));
     IdTagInfo idTagInfo = mock(IdTagInfo.class);
     confirmation.setIdTagInfo(idTagInfo);
 
@@ -119,7 +121,7 @@ public class StartTransactionConfirmationTest {
   @Test
   public void validate_idTagInfoAndTransactionIdIsSet_returnTrue() {
     // Given
-    confirmation.setTransactionId(42l);
+    confirmation.setTransactionId(BigInteger.valueOf(42));
     IdTagInfo idTagInfo = mock(IdTagInfo.class);
     when(idTagInfo.validate()).thenReturn(true);
     confirmation.setIdTagInfo(idTagInfo);

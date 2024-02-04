@@ -29,6 +29,8 @@ package eu.chargetime.ocpp.model.core;
 
 import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.utilities.MoreObjects;
+
+import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -37,10 +39,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class RemoteStopTransactionRequest implements Request {
 
-  private Long transactionId;
+  private BigInteger transactionId;
 
   /**
-   * @deprecated use {@link #RemoteStopTransactionRequest(Integer)} to be sure to set required
+   * @deprecated use {@link #RemoteStopTransactionRequest(BigInteger)} to be sure to set required
    *     fields
    */
   @Deprecated
@@ -49,9 +51,9 @@ public class RemoteStopTransactionRequest implements Request {
   /**
    * Handle required fields.
    *
-   * @param transactionId integer, transaction id, see {@link #setTransactionId(Integer)}
+   * @param transactionId integer, transaction id, see {@link #setTransactionId(BigInteger)}
    */
-  public RemoteStopTransactionRequest(Long transactionId) {
+  public RemoteStopTransactionRequest(BigInteger transactionId) {
     setTransactionId(transactionId);
   }
 
@@ -65,7 +67,7 @@ public class RemoteStopTransactionRequest implements Request {
    *
    * @return transaction id.
    */
-  public Long getTransactionId() {
+  public BigInteger getTransactionId() {
     return transactionId;
   }
 
@@ -75,7 +77,7 @@ public class RemoteStopTransactionRequest implements Request {
    * @param transactionId integer, transaction id.
    */
   @XmlElement
-  public void setTransactionId(Long transactionId) {
+  public void setTransactionId(BigInteger transactionId) {
     this.transactionId = transactionId;
   }
 

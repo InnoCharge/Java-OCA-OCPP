@@ -5,6 +5,8 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
 
+import java.math.BigInteger;
+
 import eu.chargetime.ocpp.PropertyConstraintException;
 import eu.chargetime.ocpp.model.core.MeterValue;
 import eu.chargetime.ocpp.model.core.MeterValuesRequest;
@@ -82,7 +84,7 @@ public class MeterValuesRequestTest {
   @Test
   public void setTransactionId_transactionIdIsSet() {
     // Given
-    long anyValue = 42;
+    BigInteger anyValue = BigInteger.valueOf(42);
 
     // When
     request.setTransactionId(anyValue);

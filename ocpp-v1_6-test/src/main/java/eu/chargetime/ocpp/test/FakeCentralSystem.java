@@ -48,6 +48,8 @@ import eu.chargetime.ocpp.model.securityext.types.*;
 import eu.chargetime.ocpp.model.smartcharging.SetChargingProfileConfirmation;
 import eu.chargetime.ocpp.model.smartcharging.SetChargingProfileRequest;
 import eu.chargetime.ocpp.test.FakeCentral.serverType;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -295,7 +297,7 @@ public class FakeCentralSystem {
 
   public void sendRemoteStopTransactionRequest(long transactionId) throws Exception {
     RemoteStopTransactionRequest request = new RemoteStopTransactionRequest();
-    request.setTransactionId(transactionId);
+    request.setTransactionId(BigInteger.valueOf(42));
     send(request);
   }
 

@@ -30,6 +30,8 @@ package eu.chargetime.ocpp.model.core;
 import eu.chargetime.ocpp.PropertyConstraintException;
 import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.utilities.MoreObjects;
+
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
@@ -46,7 +48,7 @@ import javax.xml.bind.annotation.XmlType;
 public class MeterValuesRequest implements Request {
 
   private Integer connectorId;
-  private Long transactionId;
+  private BigInteger transactionId;
   private MeterValue[] meterValue;
 
   /** @deprecated use {@link #MeterValuesRequest(Integer)} to be sure to set required fields */
@@ -105,7 +107,7 @@ public class MeterValuesRequest implements Request {
    *
    * @return transaction id.
    */
-  public Long getTransactionId() {
+  public BigInteger getTransactionId() {
     return transactionId;
   }
 
@@ -115,7 +117,7 @@ public class MeterValuesRequest implements Request {
    * @param transactionId integer, transaction id.
    */
   @XmlElement
-  public void setTransactionId(Long transactionId) {
+  public void setTransactionId(BigInteger transactionId) {
     this.transactionId = transactionId;
   }
 

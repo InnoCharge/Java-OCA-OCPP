@@ -32,6 +32,8 @@ import eu.chargetime.ocpp.feature.*;
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.model.core.*;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -213,7 +215,7 @@ public class ClientCoreProfile implements Profile {
    * @return an instance of {@link StopTransactionRequest}.
    */
   public StopTransactionRequest createStopTransactionRequest(
-      int meterStop, ZonedDateTime timestamp, long transactionId) {
+      int meterStop, ZonedDateTime timestamp, BigInteger transactionId) {
     StopTransactionRequest request =
         new StopTransactionRequest(meterStop, timestamp, transactionId);
     return request;

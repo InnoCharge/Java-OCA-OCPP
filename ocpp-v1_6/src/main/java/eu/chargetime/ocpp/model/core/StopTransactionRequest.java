@@ -31,6 +31,8 @@ import eu.chargetime.ocpp.PropertyConstraintException;
 import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.utilities.ModelUtil;
 import eu.chargetime.ocpp.utilities.MoreObjects;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Objects;
@@ -47,12 +49,12 @@ public class StopTransactionRequest implements Request {
   private String idTag;
   private Integer meterStop;
   private ZonedDateTime timestamp;
-  private Long transactionId;
+  private BigInteger transactionId;
   private Reason reason;
   private MeterValue[] transactionData;
 
   /**
-   * @deprecated use {@link #StopTransactionRequest(Integer, ZonedDateTime, Integer)} to be sure to
+   * @deprecated use {@link #StopTransactionRequest(Integer, ZonedDateTime, BigInteger)} to be sure to
    *     set required fields
    */
   @Deprecated
@@ -63,9 +65,9 @@ public class StopTransactionRequest implements Request {
    *
    * @param meterStop integer, meter value in Wh, see {@link #setMeterStop(Integer)}
    * @param timestamp ZonedDateTime, stop time, see {@link #setTimestamp(ZonedDateTime)}
-   * @param transactionId integer, transaction id, see {@link #setTransactionId(Integer)}
+   * @param transactionId integer, transaction id, see {@link #setTransactionId(BigInteger)}
    */
-  public StopTransactionRequest(Integer meterStop, ZonedDateTime timestamp, Long transactionId) {
+  public StopTransactionRequest(Integer meterStop, ZonedDateTime timestamp, BigInteger transactionId) {
     setMeterStop(meterStop);
     setTimestamp(timestamp);
     setTransactionId(transactionId);
@@ -163,7 +165,7 @@ public class StopTransactionRequest implements Request {
    *
    * @return transaction id.
    */
-  public Long getTransactionId() {
+  public BigInteger getTransactionId() {
     return transactionId;
   }
 
@@ -174,7 +176,7 @@ public class StopTransactionRequest implements Request {
    * @param transactionId integer, transaction id.
    */
   @XmlElement
-  public void setTransactionId(Long transactionId) {
+  public void setTransactionId(BigInteger transactionId) {
     this.transactionId = transactionId;
   }
 

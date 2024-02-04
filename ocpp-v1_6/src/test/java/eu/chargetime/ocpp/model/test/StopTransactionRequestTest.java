@@ -10,6 +10,8 @@ import eu.chargetime.ocpp.PropertyConstraintException;
 import eu.chargetime.ocpp.model.core.MeterValue;
 import eu.chargetime.ocpp.model.core.Reason;
 import eu.chargetime.ocpp.model.core.StopTransactionRequest;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import org.junit.Assert;
 import org.junit.Before;
@@ -102,7 +104,7 @@ public class StopTransactionRequestTest {
   @Test
   public void setTransactionId_anInteger_transactionIdIsSet() {
     // Given
-    Long anInteger = 42l;
+    BigInteger anInteger = BigInteger.valueOf(42);
 
     // When
     request.setTransactionId(anInteger);
@@ -149,7 +151,7 @@ public class StopTransactionRequestTest {
     // Given
     request.setMeterStop(42);
     request.setTimestamp(ZonedDateTime.now());
-    request.setTransactionId(42l);
+    request.setTransactionId(BigInteger.valueOf(42));
 
     // When
     boolean isValid = request.validate();
@@ -176,7 +178,7 @@ public class StopTransactionRequestTest {
     // Given
     request.setMeterStop(42);
     request.setTimestamp(ZonedDateTime.now());
-    request.setTransactionId(42l);
+    request.setTransactionId(BigInteger.valueOf(42));
 
     MeterValue meterValue = mock(MeterValue.class);
     request.setTransactionData(aList(meterValue));

@@ -45,6 +45,8 @@ import eu.chargetime.ocpp.model.reservation.*;
 import eu.chargetime.ocpp.model.securityext.*;
 import eu.chargetime.ocpp.model.securityext.types.*;
 import eu.chargetime.ocpp.model.smartcharging.*;
+
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.ZonedDateTime;
@@ -353,7 +355,7 @@ public class FakeChargePoint {
   }
 
   public void sendStopTransactionRequest() throws Exception {
-    StopTransactionRequest request = core.createStopTransactionRequest(42, ZonedDateTime.now(), 42);
+    StopTransactionRequest request = core.createStopTransactionRequest(42, ZonedDateTime.now(), BigInteger.valueOf(42));
     send(request);
   }
 
