@@ -15,7 +15,7 @@ buildscript {
 
 allprojects {
     group = 'de.innocharge.cteu.ocpp'
-    version = '1.2.0.i8e1'
+    version = '1.2.0.i8e2'
 }
 
 subprojects {
