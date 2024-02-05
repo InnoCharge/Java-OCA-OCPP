@@ -14,7 +14,7 @@ buildscript {
 }
 
 allprojects {
-    group = 'eu.chargetime.ocpp'
+    group = 'de.innocharge.cteu.ocpp'
     version = '1.2'
 }
 
