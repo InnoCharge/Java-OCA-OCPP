@@ -7,6 +7,8 @@ import static org.mockito.Mockito.when;
 
 import eu.chargetime.ocpp.PropertyConstraintException;
 import eu.chargetime.ocpp.model.core.*;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import org.junit.Before;
 import org.junit.Rule;
@@ -78,7 +80,7 @@ public class ChargingProfileTest {
   @Test
   public void setTransactionId_someInteger_transactionIdIsSet() {
     // Given
-    Integer someInteger = 42;
+    BigInteger someInteger = BigInteger.valueOf(42);
 
     // When
     chargingProfile.setTransactionId(someInteger);
@@ -217,7 +219,7 @@ public class ChargingProfileTest {
     when(chargingSchedule.validate()).thenReturn(true);
     chargingProfile.setChargingSchedule(chargingSchedule);
 
-    chargingProfile.setTransactionId(42);
+    chargingProfile.setTransactionId(BigInteger.valueOf(42));
     chargingProfile.setChargingProfilePurpose(ChargingProfilePurposeType.TxDefaultProfile);
 
     // When

@@ -11,6 +11,8 @@ import eu.chargetime.ocpp.feature.profile.ClientCoreProfile;
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.model.core.*;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 import org.junit.Before;
@@ -128,7 +130,7 @@ public class ClientCoreProfileTest extends ProfileTest {
   @Test
   public void createStopTransactionRequest_returnsStopTransactionRequest() {
     // When
-    Request result = core.createStopTransactionRequest(42, ZonedDateTime.now(), 42);
+    Request result = core.createStopTransactionRequest(42, ZonedDateTime.now(), BigInteger.valueOf(42));
 
     // Then
     assertThat(result, instanceOf(StopTransactionRequest.class));
@@ -323,7 +325,7 @@ public class ClientCoreProfileTest extends ProfileTest {
   public void
       handleRequest_aRemoteStopTransactionRequest_callsHandleRemoteStopTransactionRequest() {
     // Given
-    RemoteStopTransactionRequest request = new RemoteStopTransactionRequest(0);
+    RemoteStopTransactionRequest request = new RemoteStopTransactionRequest(BigInteger.valueOf(0));
 
     // When
     core.handleRequest(SESSION_NULL, request);

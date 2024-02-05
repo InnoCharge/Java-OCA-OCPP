@@ -30,6 +30,8 @@ package eu.chargetime.ocpp.model.core;
 
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.utilities.MoreObjects;
+
+import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -43,10 +45,10 @@ import javax.xml.bind.annotation.XmlType;
 public class StartTransactionConfirmation extends Confirmation {
 
   private IdTagInfo idTagInfo;
-  private Integer transactionId;
+  private BigInteger transactionId;
 
   /**
-   * @deprecated use {@link #StartTransactionConfirmation(IdTagInfo, Integer)} to be sure to set
+   * @deprecated use {@link #StartTransactionConfirmation(IdTagInfo, BigInteger)} to be sure to set
    *     required fields
    */
   @Deprecated
@@ -56,9 +58,9 @@ public class StartTransactionConfirmation extends Confirmation {
    * Handle required fields.
    *
    * @param idTagInfo the {@link IdTagInfo}, see {@link #setIdTagInfo(IdTagInfo)}
-   * @param transactionId integer, transaction, see {@link #setTransactionId(Integer)}
+   * @param transactionId integer, transaction, see {@link #setTransactionId(BigInteger)}
    */
-  public StartTransactionConfirmation(IdTagInfo idTagInfo, Integer transactionId) {
+  public StartTransactionConfirmation(IdTagInfo idTagInfo, BigInteger transactionId) {
     setIdTagInfo(idTagInfo);
     setTransactionId(transactionId);
   }
@@ -95,7 +97,7 @@ public class StartTransactionConfirmation extends Confirmation {
    *
    * @return transaction id.
    */
-  public Integer getTransactionId() {
+  public BigInteger getTransactionId() {
     return transactionId;
   }
 
@@ -105,7 +107,7 @@ public class StartTransactionConfirmation extends Confirmation {
    * @param transactionId integer, transaction.
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(BigInteger transactionId) {
     this.transactionId = transactionId;
   }
 

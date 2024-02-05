@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.math.BigInteger;
+
 import eu.chargetime.ocpp.model.core.RemoteStopTransactionRequest;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +46,7 @@ public class RemoteStopTransactionRequestTest {
   @Test
   public void setTransactionId_anInteger_transactionIdIsSet() {
     // Given
-    Integer anInteger = 42;
+    BigInteger anInteger = BigInteger.valueOf(42);
 
     // When
     request.setTransactionId(anInteger);
@@ -65,7 +67,7 @@ public class RemoteStopTransactionRequestTest {
   @Test
   public void validate_transactionIdIsSet_returnTrue() {
     // Given
-    request.setTransactionId(42);
+    request.setTransactionId(BigInteger.valueOf(42));
 
     // When
     boolean isValid = request.validate();

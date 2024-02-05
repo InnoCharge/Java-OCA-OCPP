@@ -3,6 +3,8 @@ package eu.chargetime.ocpp.model.core;
 import eu.chargetime.ocpp.PropertyConstraintException;
 import eu.chargetime.ocpp.model.Validatable;
 import eu.chargetime.ocpp.utilities.MoreObjects;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,7 +52,7 @@ import javax.xml.bind.annotation.XmlType;
     })
 public class ChargingProfile implements Validatable {
   private Integer chargingProfileId;
-  private Integer transactionId;
+  private BigInteger transactionId;
   private Integer stackLevel;
   private ChargingProfilePurposeType chargingProfilePurpose;
   private ChargingProfileKindType chargingProfileKind;
@@ -156,7 +158,7 @@ public class ChargingProfile implements Validatable {
    *
    * @return the transactionId
    */
-  public Integer getTransactionId() {
+  public BigInteger getTransactionId() {
     return transactionId;
   }
 
@@ -167,7 +169,7 @@ public class ChargingProfile implements Validatable {
    * @param transactionId Integer
    */
   @XmlElement
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(BigInteger transactionId) {
     this.transactionId = transactionId;
   }
 

@@ -44,6 +44,7 @@ import eu.chargetime.ocpp.model.securityext.*;
 import eu.chargetime.ocpp.model.securityext.types.GenericStatusEnumType;
 
 import java.lang.reflect.Type;
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 import java.util.function.BiConsumer;
@@ -122,7 +123,7 @@ public class DummyHandlers {
 
         StartTransactionConfirmation confirmation = new StartTransactionConfirmation();
         confirmation.setIdTagInfo(tagInfo);
-        confirmation.setTransactionId(42);
+        confirmation.setTransactionId(BigInteger.valueOf(42));
         return failurePoint(confirmation);
       }
 

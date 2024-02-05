@@ -11,6 +11,8 @@ import eu.chargetime.ocpp.feature.*;
 import eu.chargetime.ocpp.feature.profile.ServerCoreEventHandler;
 import eu.chargetime.ocpp.feature.profile.ServerCoreProfile;
 import eu.chargetime.ocpp.model.core.*;
+
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 import org.junit.Before;
@@ -308,7 +310,7 @@ public class ServerCoreProfileTest extends ProfileTest {
   public void
       createRemoteStopTransactionRequest_withTransactionId_returnsValidRemoteStopTransactionRequest() {
     // Given
-    Integer transactionId = 42;
+    BigInteger transactionId = BigInteger.valueOf(42);
 
     // When
     RemoteStopTransactionRequest result = core.createRemoteStopTransactionRequest(transactionId);
@@ -401,7 +403,7 @@ public class ServerCoreProfileTest extends ProfileTest {
   @Test
   public void handleRequest_aStopTransactionRequest_callsHandleStopTransactionRequest() {
     // Given
-    StopTransactionRequest request = new StopTransactionRequest(0, ZonedDateTime.now(), 0);
+    StopTransactionRequest request = new StopTransactionRequest(0, ZonedDateTime.now(), BigInteger.valueOf(0));
     UUID sessionId = UUID.randomUUID();
 
     // When

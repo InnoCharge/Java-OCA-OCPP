@@ -30,6 +30,8 @@ import eu.chargetime.ocpp.feature.*;
 import eu.chargetime.ocpp.model.Confirmation;
 import eu.chargetime.ocpp.model.Request;
 import eu.chargetime.ocpp.model.core.*;
+
+import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.UUID;
 
@@ -175,7 +177,7 @@ public class ServerCoreProfile implements Profile {
    * @see RemoteStopTransactionRequest
    * @see RemoteStartTransactionFeature
    */
-  public RemoteStopTransactionRequest createRemoteStopTransactionRequest(Integer transactionId) {
+  public RemoteStopTransactionRequest createRemoteStopTransactionRequest(BigInteger transactionId) {
     return new RemoteStopTransactionRequest(transactionId);
   }
 
