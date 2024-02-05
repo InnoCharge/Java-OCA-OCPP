@@ -85,7 +85,7 @@ public class StopTransactionRequestTest {
   @Test
   public void setIdTag_nullGiven_passesValidation() {
     request.setMeterStop(2);
-    request.setTransactionId(5);
+    request.setTransactionId(BigInteger.valueOf(5));
     request.setTimestamp(ZonedDateTime.now());
     request.setIdTag(null);
     Assert.assertTrue(request.validate());
